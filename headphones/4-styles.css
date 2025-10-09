@@ -1,0 +1,708 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Icon Font Import */
+@font-face {
+    font-family: 'holberton_school-icon';
+    src: url('fonts/holberton_school-icon.eot?sq4eq4');
+    src: url('fonts/holberton_school-icon.eot?sq4eq4#iefix') format('embedded-opentype'),
+         url('fonts/holberton_school-icon.ttf?sq4eq4') format('truetype'),
+         url('fonts/holberton_school-icon.woff?sq4eq4') format('woff'),
+         url('fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/* CSS Custom Properties */
+:root {
+    --primary-color: #FF6565;
+    --text-dark: #071629;
+    --text-light: #ffffff;
+    --background-dark: #071629;
+    --font-family: 'Source Sans Pro', sans-serif;
+    --max-width: 1000px;
+    --mobile-breakpoint: 480px;
+    --transition: 0.3s ease;
+}
+
+/* Base Typography */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-light);
+    background-color: var(--background-dark);
+}
+
+/* Container */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 0;
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    width: auto;
+    height: 32px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: lowercase;
+    transition: color var(--transition);
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(7, 22, 41, 0.3), rgba(7, 22, 41, 0.3)),
+                url('images/01_headphones_desktop@2x.png') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 0 80px;
+}
+
+.hero-content {
+    max-width: 637px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    color: var(--text-light);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 13px 31px;
+    border: none;
+    border-radius: 22px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity var(--transition);
+    font-family: var(--font-family);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn:hover,
+.btn:active {
+    opacity: 0.9;
+}
+
+.hero-description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.625;
+    margin-top: 65px;
+    color: var(--text-light);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 480px) {
+    /* Container */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Header */
+    .header {
+        padding: 20px 0;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo-img {
+        height: 30px;
+    }
+
+    /* Navigation - Mobile */
+    .nav-menu {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    /* Hero Section - Mobile */
+    .hero {
+        padding: 100px 0 60px;
+        min-height: 100vh;
+    }
+
+    .hero-title {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-top: 50px;
+    }
+
+    .btn {
+        padding: 12px 28px;
+        font-size: 13px;
+    }
+}
+
+/* Tablet Responsive */
+@media (max-width: 768px) and (min-width: 481px) {
+    .nav-menu {
+        gap: 30px;
+    }
+
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .hero-description {
+        margin-top: 55px;
+    }
+}
+
+/* Icon Font Classes */
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'holberton_school-icon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sound-frecuency:before {
+    content: "\e90e";
+}
+
+.icon-video:before {
+    content: "\e910";
+}
+
+.icon-music:before {
+    content: "\e90d";
+}
+
+.icon-hearing:before {
+    content: "\e909";
+}
+
+/* What We Do Section */
+.what-we-do {
+    padding: 110px 0;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+}
+
+.section-content {
+    text-align: center;
+    max-width: 637px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+}
+
+.section-description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.625;
+    margin-bottom: 100px;
+    color: var(--text-dark);
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-item {
+    text-align: center;
+}
+
+.service-icon {
+    margin-bottom: 26px;
+}
+
+.service-icon span {
+    font-size: 94px;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.service-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+.service-description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.625;
+    color: var(--text-dark);
+}
+
+/* Mobile Styles for What We Do Section */
+@media (max-width: 480px) {
+    .what-we-do {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .section-description {
+        font-size: 14px;
+        margin-bottom: 60px;
+        line-height: 1.5;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 300px;
+    }
+
+    .service-icon span {
+        font-size: 80px;
+    }
+
+    .service-title {
+        font-size: 16px;
+        margin-bottom: 14px;
+    }
+
+    .service-description {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+/* Tablet Styles for What We Do Section */
+@media (max-width: 768px) and (min-width: 481px) {
+    .what-we-do {
+        padding: 80px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+
+    .section-description {
+        margin-bottom: 80px;
+    }
+}
+
+/* Our Results Section */
+.our-results {
+    padding: 110px 0;
+    background: linear-gradient(rgba(7, 22, 41, 0.8), rgba(7, 22, 41, 0.8)),
+                url('images/01_headphones_desktop@2x.png') no-repeat center center;
+    background-size: cover;
+    color: var(--text-light);
+}
+
+.section-title--light {
+    color: var(--text-light);
+}
+
+.section-description--light {
+    color: var(--text-light);
+}
+
+/* Results Grid */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.result-item {
+    text-align: center;
+    position: relative;
+}
+
+.result-icon {
+    position: relative;
+    width: 190px;
+    height: 190px;
+    margin: 0 auto 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pentagon-bg {
+    width: 190px;
+    height: 190px;
+    background: url('images/pentagone.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.result-number {
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.result-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.625;
+    color: var(--text-light);
+}
+
+/* Mobile Styles for Our Results Section */
+@media (max-width: 480px) {
+    .our-results {
+        padding: 60px 0;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 300px;
+    }
+
+    .result-icon {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+    }
+
+    .pentagon-bg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .result-number {
+        font-size: 36px;
+        margin-bottom: 12px;
+    }
+
+    .result-text {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+/* Tablet Styles for Our Results Section */
+@media (max-width: 768px) and (min-width: 481px) {
+    .our-results {
+        padding: 80px 0;
+    }
+
+    .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+
+    .result-icon {
+        width: 170px;
+        height: 170px;
+    }
+
+    .pentagon-bg {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+/* Contact Us Section */
+.contact-us {
+    padding: 110px 0;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+}
+
+.contact-form {
+    max-width: 335px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 45px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #071629;
+    background: transparent;
+    padding: 13px 0;
+    font-size: 14px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color var(--transition);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-bottom-color: var(--primary-color);
+}
+
+.form-input:valid,
+.form-textarea:valid {
+    border-bottom-color: #28a745;
+}
+
+.form-input:invalid:not(:placeholder-shown),
+.form-textarea:invalid:not(:placeholder-shown) {
+    border-bottom-color: #dc3545;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+/* Form Validation Styles */
+.form-input:required:valid {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.94-.94-.94-.94L1.36 6.73z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+}
+
+/* Mobile Styles for Contact Us Section */
+@media (max-width: 480px) {
+    .contact-us {
+        padding: 60px 0;
+    }
+
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 35px;
+    }
+
+    .form-input,
+    .form-textarea {
+        font-size: 13px;
+        padding: 12px 0;
+    }
+}
+
+/* Tablet Styles for Contact Us Section */
+@media (max-width: 768px) and (min-width: 481px) {
+    .contact-us {
+        padding: 80px 0;
+    }
+
+    .form-group {
+        margin-bottom: 40px;
+    }
+}
+
+/* Footer Section */
+.footer {
+    padding: 80px 0 40px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+.footer-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-logo-img {
+    width: auto;
+    height: 32px;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link {
+    display: inline-block;
+    transition: opacity var(--transition), transform var(--transition);
+}
+
+.social-link:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.social-link svg {
+    display: block;
+}
+
+/* Footer Copyright */
+.footer-copyright {
+    font-size: 12px;
+    font-weight: 400;
+    color: #979797;
+    opacity: 0.35;
+}
+
+.footer-copyright p {
+    margin: 0;
+}
+
+/* Mobile Styles for Footer */
+@media (max-width: 480px) {
+    .footer {
+        padding: 50px 0 30px;
+    }
+
+    .footer-content {
+        gap: 30px;
+    }
+
+    .footer-logo-img {
+        height: 28px;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-link svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .footer-copyright {
+        font-size: 11px;
+    }
+}
+
+/* Tablet Styles for Footer */
+@media (max-width: 768px) and (min-width: 481px) {
+    .footer {
+        padding: 65px 0 35px;
+    }
+
+    .footer-content {
+        gap: 35px;
+    }
+}
